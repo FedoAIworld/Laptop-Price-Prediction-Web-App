@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style>
+    form {
+    margin-top: 50px;
+    margin: auto;
+    width: 45%;
+    ;
+}
+
+body {
+    background-image: url('../static/img/purple.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    background-size: cover;
+    background-position: relative;
+}
+</style>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Laptop Price Prediction</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Image Slider-->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="../static/img/laptop.jpg" height="400" alt="First-Slide">
+            <div class="carousel-caption">
+                <h1>Laptop Price Prediction</h1>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="../static/img/laptop_keyboard.jpg" height="400" alt="Second-Slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="../static/img/laptop_apple.jpg" height="400" alt="Third-Slide">
+        </div>
+    </div>
+</div>
+<!-- Jumbotron -->
+<div class="container-fluid">
+<div class="row jumbotron text-center">
+    <div class="col-lg-7 col-xl-8 pt-4">
+        <h4>Enter Attributes For Laptop Price Prediction</h4>
+    </div>
+</div>   
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-cent text-center">
+    <form action="{{ url_for('predict') }}" method="POST">
+        <label class="form-label" for="brand">Brand</label><br>
+        <select class="form-control" name="brand" id="brand">
+            <option value=1>Apple</option>
+            <option value=2>HP</option>
+            <option value=3>Acer</option>
+            <option value=4>Asus</option>
+            <option value=5>Dell</option>
+            <option value=6>Lenovo</option>
+            <option value=7>Chuwi</option>
+            <option value=8>MSI</option>
+            <option value=9>Microsoft</option>
+            <option value=10>Toshiba</option>
+            <option value=11>Huawei</option>
+            <option value=12>Xiaomi</option>
+            <option value=13>Vero</option>
+            <option value=14>Razer</option>
+            <option value=15>Mediacom</option>
+            <option value=16>Samsung</option>
+            <option value=17>Google</option>
+            <option value=18>Fujitsu</option>
+            <option value=19>LG</option>
+        </select>
+        <br>
+        <label class="form-label" for="typename">Laptop Type</label><br>
+        <select class="form-control" name="typename" id="typename">
+            <option value=1>Ultrabook</option>
+            <option value=2>Notebook</option>
+            <option value=3>Netbook</option>
+            <option value=4>Gaming</option>
+            <option value=5>2 in 1 Convertible</option>
+            <option value=6>Workstation</option>
+        </select>
+        <br>
+        <label class="form-label" for="ram">Ram(GB)</label><br>
+        <select class="form-control" name="ram" id="ram">
+            <option value=2>2</option>
+            <option value=4>4</option>
+            <option value=6>6</option>
+            <option value=8>8</option>
+            <option value=16>16</option>
+            <option value=24>24</option>
+            <option value=32>32</option>
+            <option value=64>64</option>
+        </select>
+        <br>
+        <label class="form-label" for="opsys">OpSys</label><br>
+        <select class="form-control" name="opsys" id="opsys">
+            <option value=1>Mac OS X</option>
+            <option value=2>Windows 10</option>
+            <option value=3>Linux</option>
+            <option value=4>Mac OS</option>
+            <option value=5>Windows 7</option>
+            <option value=6>Andriod</option>
+            <option value=7>Windows 10 S</option>
+            <option value=8>Chrome OS</option>
+            <option value=9>Other_OS</option>
+        </select>
+        <br>
+        <label class="form-label" for="weight">Weight(kg)</label><br>
+        <input class="form-control" name="weight" type="text" placeholder="1.00" step="0.01" min="1" max="5">
+        <br>
+        <label class="form-label" for="touchscreen">TouchScreen</label><br>
+        <select class="form-control" name="touchscreen" id="touchscreen">
+            <option value=0>Yes</option>
+            <option value=1>No</option>
+        </select>
+        <br>
+        <label class="form-label" for="ips">IPS</label><br>
+        <select class="form-control" name="ips" id="ips">
+            <option value=0>Yes</option>
+            <option value=1>No</option>
+        </select>
+        <br>
+        <label class="form-label" for="inches">Display Size</label><br>
+        <input class="form-control" name="inches" type="text" placeholder="1.0" step="0.01" min="11" max="19">
+        <br>
+        <label class="form-label" for="resolution">ScreenResolution</label><br>
+        <select class="form-control" name="resolution" id="resolution">
+            <option value=1>1366x768</option>
+            <option value=2>1440x900</option>
+            <option value=3>1600x900</option>
+            <option value=4>1920x1080</option>
+            <option value=5>1920x1200</option>
+            <option value=6>2160x1440</option>
+            <option value=7>2304x1440</option>
+            <option value=8>2256x1504</option>
+            <option value=9>2560x1440</option>
+            <option value=10>2400x160</option>
+            <option value=11>2560x1600</option>
+            <option value=12>2736x1824</option>
+            <option value=13>2880x1800</option>
+            <option value=14>3200x1800</option>
+            <option value=15>3840x2160</option>
+        </select>
+        <br>
+        <label class="form-label" for="cpu">Cpu</label><br>
+        <select class="form-control" name="cpu" id="cpu">
+            <option value=1>Intel Core i5</option>
+            <option value=2>Intel Core i7</option>
+            <option value=3>A9-Series</option>
+            <option value=4>Intel Core i3</option>
+            <option value=5>Intel Core M</option>
+            <option value=6>Intel Atom</option>
+            <option value=7>AMD E-Series</option>
+            <option value=8>Intel Atom x5-Z8300</option>
+            <option value=9>AMD E-Series E2-6110</option>
+            <option value=10>AMD A6-Series 9220</option>
+            <option value=11>Intel Celeron Dual</option>
+            <option value=12>AMD Ryzen 1700</option>
+            <option value=13>Intel Pentium Quad</option>
+            <option value=14>Intel Atom x5-Z8550</option>
+            <option value=15>AMD FX 9830P</option>
+            <option value=16>AMD E-Series 6110</option>
+            <option value=17>Intel Xeon E3-1505M</option>
+            <option value=18>AMD E-Series 9000e</option>
+            <option value=19>AMD A10-Series A10</option>
+            <option value=20>AMD A6-Series A6</option>
+            <option value=21>AMD A10-Series</option>
+            <option value=22>AMD A8-Series</option>
+            <option value=23>AMD A12-Series</option>
+            <option value=24>Intel Celeron Quad</option>
+            <option value=25>AMD Ryzen 1600</option>
+            <option value=26>AMD E-Series</option>
+            <option value=27>AMD A9-Series</option>
+            <option value=28>Intel Xeon E3-1535M</option>
+            <option value=29>AMD E-Series E2-9000</option>
+            <option value=30>AMD A6-Series 7310</option>
+            <option value=31>Intel Atom Z8350</option>
+            <option value=32>Intel Pentium Dual</option>
+            <option value=33>AMD A12-Series 9700P</option>
+            <option value=34>AMD A4-Series 7210</option>
+            <option value=35>AMD FX 8800P</option>
+            <option value=36>Intel Atom X5-Z8350</option>
+            <option value=37>Samsung Cortex</option>
+            <option value=38>AMD E-Series 9000</option>
+            <option value=39>AMD A9-Series 9410</option>
+            <option value=40>AMD FX</option>
+        </select>
+        <br>
+        <label class="form-label" for="gpu">GpuBrand</label><br>
+        <select class="form-control" name="gpu" id="gpu">
+            <option value=0>Intel</option>
+            <option value=1>AMD</option>
+            <option value=2>Nvidia</option>
+        </select>
+        <br>
+        <label class="form-label" for="hdd">HDD(GB)</label><br>
+        <select class="form-control" name="hdd" id="hdd">
+            <option value=0>0</option>
+            <option value=32>32</option>
+            <option value=128>128</option>
+            <option value=512>500</option>
+            <option value=1024>1024</option>
+            <option value=2048>2048</option>
+        </select>
+        <br>
+        <label class="form-label" for="ssd">SSD(GB)</label><br>
+        <select class="form-control" name="ssd" id="ssd">
+            <option value=0>0</option>
+            <option value=8>8</option>
+            <option value=16>16</option>
+            <option value=64>64</option>
+            <option value=128>128</option>
+            <option value=180>180</option>
+            <option value=240>240</option>
+            <option value=256>256</option>
+            <option value=512>512</option>
+            <option value=768>768</option>
+            <option value=1000>1000</option>
+            <option value=1024>1024</option>
+        </select>
+        <br>
+        <button type="submit" class="btn btn-outline-dark">Predict Price</button>
+        <br>
+        <br>
+        <br>
+    </form>
+    </div> 
+</div>
+</div>
+</body>
+</html>

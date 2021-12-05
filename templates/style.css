@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+}
+
+.carousel-item {
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+}
+
+.carousel-inner img {
+    max-width: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 47%;
+}
+.carousel-caption h1 {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    text-shadow: .1rem .1rem 1rem black;
+}
+
+.jumbotron {
+    padding: 1rem;
+    border-radius: 0;
+    text-align: center;
+}
+
+.navbar-text h1 {
+    color: #ggg;
+    font-size: 40px;
+}
+
+body {
+    background-image: url('../static/img/purple.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    background-size: cover;
+    background-position: relative;
+}
+
+/*---Media Queries --*/
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+@media (max-width: 575px) {
+
+}
+
