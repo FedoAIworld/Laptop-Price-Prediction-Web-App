@@ -2,7 +2,7 @@
 
 The aim was to train an ML model to predict the price of a laptop based on common attributes like memory, screen resolution, processor etc.
 
-[![](laptop_price_prediction_design.pdf)](https://github.com/FedoAIworld/Laptop-Price-Prediction-Web-App/blob/main/laptop_price_prediction_design.pdf)
+<img src="laptop_price_prediction_design.png" width="300" height="500"/>
 
 # **Data**
 
